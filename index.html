@@ -131,8 +131,21 @@ function showStandalonePrint(html,kind){
    html=html.replace('</body></html>','</div></body></html>');
    html=html.replace('<button onclick="window.print()">','<button id="reportPdfButton" type="button">');
  }
+ // Make the weekly print button call the PDF action directly, rather than relying on
+ // DOMContentLoaded in a document replaced by document.write() on iOS WebKit.
+ if(kind==='weekly'){
+   html=html.replace('id="savePdf" onclick="window.print()"', 'id="savePdf" type="button" onclick="savePdfInApp()"');
+   html=html.replace('🖨️ 印刷 / PDF保存</button>', '📄 PDF作成・共有</button>');
+ }
  html=html.replace('</body></html>',script+'</body></html>');
  document.open();document.write(html);document.close();
+ // DOMContentLoaded can be missed after document.write() in standalone mode.
+ // Bind directly as well, in the same user-initiated navigation path.
+ const pdfButton=document.getElementById(kind==='weekly'?'savePdf':'reportPdfButton');
+ if(pdfButton && typeof window.savePdfInApp==='function'){
+   pdfButton.onclick=window.savePdfInApp;
+   pdfButton.textContent='📄 PDF作成・共有';
+ }
 }
 
 function weeklyPrint(){

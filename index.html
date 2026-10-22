@@ -99,19 +99,18 @@ function showStandalonePrint(html,kind){
    const source=document.querySelector('.sheet')||document.getElementById('reportContent');
    if(!source)throw new Error('印刷内容が見つかりません');
    let blob;
-   if(source.classList.contains('sheet')){
-     // Render the fixed A4 sheet to a single image, then place it on one PDF page.
-     // Avoid html2pdf's page-break/clone logic, which fails on some iOS standalone WebViews.
-     const canvas=await html2canvas(source,{scale:2,backgroundColor:'#ffffff',useCORS:true,scrollY:0,windowWidth:Math.max(800,source.scrollWidth),onclone:(doc)=>{
-       const el=doc.querySelector('.sheet');if(el){el.style.transform='none';el.style.margin='0';}
-     }});
-     const pdf=new jspdf.jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
-     pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',10,10,190,259);
-     blob=pdf.output('blob');
-   }else{
-     const opts={margin:12,filename:pdfFileName,image:{type:'jpeg',quality:.95},html2canvas:{scale:2,useCORS:true,scrollY:0},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css','legacy']}};
-     blob=await html2pdf().set(opts).from(source).outputPdf('blob');
+   // Both weekly and monthly reports use the same html2pdf engine.
+   // The old weekly-only branch relied on html2canvas/jsPDF globals which
+   // are not guaranteed to exist in the installed iOS web app.
+   const weekly=source.classList.contains('sheet');
+   if(weekly){
+     source.style.transform='none';
+     source.style.transformOrigin='top left';
    }
+   const opts=weekly
+     ? {margin:10,filename:pdfFileName,image:{type:'jpeg',quality:.93},html2canvas:{scale:1.5,useCORS:true,scrollY:0},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css','legacy']}}
+     : {margin:12,filename:pdfFileName,image:{type:'jpeg',quality:.95},html2canvas:{scale:2,useCORS:true,scrollY:0},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css','legacy']}};
+   blob=await html2pdf().set(opts).from(source).outputPdf('blob');
    const file=new File([blob],pdfFileName,{type:'application/pdf'});
    if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){
      await navigator.share({files:[file],title:pdfFileName});

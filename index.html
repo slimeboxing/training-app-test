@@ -1,112 +1,90 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10223e"><title>TRAINING LOG V6 LEGACY MERGE 04</title><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=20261022b"><link rel="icon" type="image/png" href="./apple-touch-icon.png?v=20261022b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TRAINING LOG"><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10223e"><title>TRAINING LOG V6 MERGE TEST</title><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=20261022b"><link rel="icon" type="image/png" href="./apple-touch-icon.png?v=20261022b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="TRAINING LOG"><style>
 :root{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;color:#14243a;background:#f1f5fb}*{box-sizing:border-box}body{margin:0}header{background:#10223e;color:white;padding:18px 16px;font-weight:900;font-size:24px}nav{display:flex;background:white;position:sticky;top:0;z-index:5;overflow:auto;border-bottom:1px solid #d9e2ee}nav button{flex:1;letter-spacing:.6px;border:0;background:white;padding:15px 9px;white-space:nowrap;color:#66758c;font-weight:700;font-size:14px}nav button.active{color:#1156bd;border-bottom:4px solid #1156bd}main{max-width:740px;margin:auto;padding:14px 12px 50px}.panel{background:white;border:1px solid #d9e3ef;border-radius:20px;padding:18px;margin-bottom:16px;box-shadow:0 1px 3px #162d4810}h2{margin:4px 0 18px;font-size:23px}h3{margin:14px 0 10px}button{cursor:pointer}button.primary{background:#1557bb;color:white;border:0;border-radius:12px;padding:13px 17px;font-weight:700}button.soft{background:#eaf1fb;border:0;border-radius:12px;padding:12px;color:#1557bb;font-weight:700}button.on{background:#1557bb;color:white}button.offon{background:#dbe7f6;color:#164781;border:2px solid #1557bb}.restore-button{display:inline-flex;align-items:center;justify-content:center;background:#eaf1fb;color:#1557bb;border:0;border-radius:12px;padding:13px 17px;font-weight:700;font-size:14px;min-height:44px;line-height:1.3;white-space:nowrap}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px}.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:18px}.days button{border:1px solid #d5dfeb;border-radius:12px;padding:10px 0;background:#f7f9fd;color:#1557bb;font-size:13px}.days button.active{background:#1557bb;color:white}.group{border-top:1px solid #e2e9f3;padding:13px 0}.group h3{margin:0 0 12px;color:#144f9e}.exercise{padding:12px 0;border-bottom:1px solid #edf0f6}.exercise-title{font-weight:700;margin-bottom:9px;line-height:1.5}.checks{display:flex;gap:8px;flex-wrap:wrap}.check{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:42px;padding:7px 12px;border:1px solid #c9d6e7;border-radius:11px;background:#f7f9fc;color:#33506d;font-weight:700}.check.done{background:#1663c6;color:white;border-color:#1663c6}.muted{color:#718198;font-size:14px;line-height:1.6}.progress{height:10px;border-radius:10px;background:#e4ebf4;overflow:hidden;margin:18px 0 9px}.progress>div{height:100%;background:#1557bb;transition:width .2s}.hidden{display:none!important}textarea,input,select{font:inherit;border:1px solid #c9d6e7;border-radius:10px;padding:12px;background:white;width:100%;color:#14243a}textarea{min-height:170px;resize:vertical}label{display:block;font-weight:700;margin:12px 0 5px}.weekrow{border-top:1px solid #e4ebf3;padding:14px 0;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}.weekrow b{display:block;margin-bottom:5px}.metric{font-size:26px;font-weight:800;color:#1557bb}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.timer{text-align:center;font-size:64px;font-weight:800;font-variant-numeric:tabular-nums;padding:18px 0}.note{background:#f2f6fc;border-radius:10px;padding:12px;font-size:13px;color:#61728c;line-height:1.6}.pill{display:inline-block;background:#e7f0ff;color:#1557bb;padding:7px 11px;border-radius:10px;font-size:13px;font-weight:700}.off{background:#f5f8fc;text-align:center;padding:30px;border-radius:14px;color:#54677f}summary{cursor:pointer;font-weight:700;color:#1557bb;padding:8px 0}footer{text-align:center;color:#8492a4;padding:20px;font-size:12px}
  .single-exercise{display:flex;align-items:center;gap:12px;min-height:56px}.single-exercise .exercise-title{margin:0}.multi-exercise .exercise-title{margin-bottom:8px}.square-check{width:34px;height:34px;min-width:34px;min-height:34px;padding:0;border:2px solid #b8c6da;border-radius:9px;background:#fff;color:transparent;font-size:23px;line-height:1}.square-check.done{background:#1557bb;color:white;border-color:#1557bb}.memo-entry{padding:13px 0;border-bottom:1px solid #e1e8f2}.memo-entry p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;margin:8px 0}.memo-entry button{margin-top:5px} </style></head><body><header>🥊 TRAINING LOG</header><nav><button data-tab="today" class="active">TODAY</button><button data-tab="week">WEEKLY</button><button data-tab="timer">TIMER</button><button data-tab="memo">MEMO</button><button data-tab="stats">STATS</button></nav><main>
 <section id="today"><div class="panel"><h2 id="dateTitle"></h2><div class="days" id="days"></div><div class="buttons"><button class="soft" id="sunBtn">☀️ 晴れ</button><button class="soft" id="rainBtn">🌧️ 雨</button><button class="soft" id="offBtn">🛌 OFF</button></div><div id="todayTasks"></div><div class="progress"><div id="bar"></div></div><p class="muted" id="count"></p></div><div class="panel"><h2>📝 トレーニング記録</h2><p class="muted" id="logDate"></p><div class="grid"><div><label>RUN距離 km</label><input id="runKm" type="number" step="0.01"></div><div><label>体重 kg</label><input id="weight" type="number" step="0.1"></div><div><label>RUN消費 kcal</label><div class="metric" id="runKcal">0</div></div><div><label>その他運動 kcal</label><input id="otherKcal" type="number" step="1"></div></div><label>メモ</label><textarea id="memo" placeholder="今日の練習メモ"></textarea><div class="buttons"><button class="primary" id="saveLog">記録を保存</button></div><p class="note">RUN消費 = 体重 × 距離 × 1.036。その他運動はWatch累計の差分などを入力。</p></div>
 </section>
 <section id="week" class="hidden"><div class="panel"><h2>📋 GPTの週間メニューを読込</h2><p class="muted">月〜日の予定を1行ずつ入力。「通常」「雨天」「実績」も書けるで！ 筋トレA〜Dは内蔵済み。下のクエストも週ごとに変更できるで。</p><textarea id="menuText" placeholder="月曜：筋トレA、グローブシャドー6R、RUN5km&#10;火曜：パーソナル&#10;水曜：筋トレB、サンドバッグ6R"></textarea><div class="buttons"><button class="primary" id="importBtn">この週に読み込む</button><button class="soft" id="sampleBtn">入力例</button></div><p class="note">読込すると選択中の週の予定が更新される。過去の練習記録は残る。</p></div><div class="panel"><h2>📅 週間メニュー</h2><div class="buttons"><button class="soft" id="prevWeek">← 前週</button><button class="soft" id="nextWeek">次週 →</button></div><span class="pill" id="weekRange"></span><div id="weekRows"></div></div><div class="panel"><h2>🥊 今週のクエスト（自由編集）</h2><p class="muted">GPTが作った各Rの内容をそのまま貼り付け。選択中の週だけ更新するで。1行に1R、番号なしでもOK。</p><label>グローブシャドー（最大36R）</label><textarea id="shadowQuest" rows="12" placeholder="1R：刺しジャブ＋前後ステップ&#10;2R：ジャブ→右ストレート→左フック"></textarea><label>サンドバッグ（最大24R）</label><textarea id="bagQuest" rows="6" placeholder="1R：ジャブ→右ストレート&#10;2R：右フック→ボディ"></textarea><div class="buttons"><button class="primary" id="saveQuest">この週のクエストを保存</button><button class="soft" id="resetQuest">固定メニューに戻す</button></div><p class="note">週間PDFはGPTで作成。アプリはメニューの読込・記録・月間レポート出力に専念するで。</p></div></section>
 <section id="timer" class="hidden"><div class="panel"><h2>⏱️ ラウンドタイマー</h2><p class="muted">開始・終了は実録のボクシングゴング、終了10秒前は拍子木2回。指定のゴング音をアプリに内蔵済み！</p><label>ラウンド（秒）</label><input id="roundSeconds" type="number" min="1" value="120"><label>ラウンド数</label><input id="roundCount" type="number" min="1" max="99" value="6"><p class="muted" id="roundProgress">1 / 6 R</p><label>休憩（秒）</label><input id="restSeconds" type="number" min="0" value="30"><div class="timer" id="clock">02:00</div><p class="muted" id="timerPhase">ラウンド</p><div class="buttons"><button class="primary" id="startTimer">スタート</button><button class="soft" id="pauseTimer">一時停止</button><button class="soft" id="resetTimer">リセット</button><button class="soft" id="testSound">🔔 音テスト</button></div></div></section>
-<section id="memo" class="hidden"><div class="panel"><h2>📝 TRAINING MEMO</h2><p class="muted">日付を選んで過去の練習メモを読んだり、編集できるで！</p><div id="memoList"></div></div></section><section id="stats" class="hidden"><div class="panel"><h2>📊 集計</h2><div class="grid"><div><div class="muted">記録日数</div><div class="metric" id="statDays">0</div></div><div><div class="muted">RUN総距離</div><div class="metric" id="statKm">0 km</div></div><div><div class="muted">運動消費合計</div><div class="metric" id="statKcal">0 kcal</div></div><div><div class="muted">完了チェック数</div><div class="metric" id="statChecks">0</div></div></div></div><div class="panel"><h3>📄 月間レポート（A4）</h3><label>対象月</label><input id="reportMonth" type="month"><p class="muted">記録と完了チェックから月別に集計。印刷画面からPDF保存もできるで！</p><button class="primary" id="printMonthly">月間レポートを印刷 / PDF保存</button></div><div class="panel"><h3>💾 データのバックアップ</h3><div class="buttons"><button class="primary" id="exportBtn">JSONを書き出す</button><button class="soft" id="copyExportBtn">📋 JSONを表示・コピー（旧iPad用）</button><label class="soft restore-button" style="cursor:pointer;margin:0">JSONを統合する<input id="restoreFile" type="file" accept="application/json,.json" style="display:none"></label></div><p class="muted">記録はこの端末に保存。JSON統合は空欄を補完し、完了チェックは両方残す。同じ項目の内容が異なる場合は確認後、端末側を優先。統合前後はバックアップ推奨。</p></div></section>
-<div id="legacyJsonPanel" class="panel hidden" style="max-width:740px;margin:12px auto 24px"><h2>📋 JSONバックアップ</h2><p class="note">下の文字をすべて選択してコピーし、メモなどに貼り付けて保存してな。記録はこの画面を閉じても消えへんで。</p><textarea id="legacyJsonText" readonly style="min-height:260px;font-size:12px;line-height:1.4" spellcheck="false"></textarea><div class="buttons"><button class="primary" id="legacyCopyJson">📋 全文をコピー</button><button class="soft" id="legacySelectJson">全文を選択</button><button class="soft" id="legacyCloseJson">閉じる</button></div></div></main><footer>TRAINING LOG 🥊</footer><script>
-const KEY='nao-training-v3';let db;try{db=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){db={}}db.weeks=db.weeks||{};db.checks=db.checks||{};db.weather=db.weather||{};db.logs=db.logs||{};db.off=db.off||{};db.quests=db.quests||{};const save=()=>localStorage.setItem(KEY,JSON.stringify(db));const pad=n=>String(n).padStart(2,'0');const dateStr=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const addDays=(d,n)=>{let x=new Date(d);x.setDate(x.getDate()+n);return x};const monday=d=>{let x=new Date(d.getFullYear(),d.getMonth(),d.getDate());x.setDate(x.getDate()-(x.getDay()+6)%7);return x};const today=new Date();let weekStart=monday(today),selected=dateStr(today);const days=['月','火','水','木','金','土','日'];const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+<section id="memo" class="hidden"><div class="panel"><h2>📝 TRAINING MEMO</h2><p class="muted">日付を選んで過去の練習メモを読んだり、編集できるで！</p><div id="memoList"></div></div></section><section id="stats" class="hidden"><div class="panel"><h2>📊 集計</h2><div class="grid"><div><div class="muted">記録日数</div><div class="metric" id="statDays">0</div></div><div><div class="muted">RUN総距離</div><div class="metric" id="statKm">0 km</div></div><div><div class="muted">運動消費合計</div><div class="metric" id="statKcal">0 kcal</div></div><div><div class="muted">完了チェック数</div><div class="metric" id="statChecks">0</div></div></div></div><div class="panel"><h3>📄 月間レポート（A4）</h3><label>対象月</label><input id="reportMonth" type="month"><p class="muted">記録と完了チェックから月別に集計。印刷画面からPDF保存もできるで！</p><button class="primary" id="printMonthly">月間レポートを印刷 / PDF保存</button></div><div class="panel"><h3>💾 データのバックアップ</h3><div class="buttons"><button class="primary" id="exportBtn">JSONを書き出す</button><label class="soft restore-button" style="cursor:pointer;margin:0">JSONを読み込む<input id="restoreFile" type="file" accept="application/json,.json" style="display:none"></label></div><div style="margin-top:16px;border-top:1px solid #dce5f0;padding-top:14px"><h3>📋 JSONを貼り付けて統合（iPad連携）</h3><p class="muted">iCloudメモからJSON全文をコピーして、ここに貼り付けるで。既存データは残して空欄を補完。</p><textarea id="pasteJson" rows="6" placeholder="ここにJSON全文を貼り付け" style="width:100%;box-sizing:border-box;font-family:monospace;font-size:14px"></textarea><div class="buttons" style="margin-top:10px"><button class="primary" id="pasteMergeBtn" type="button">貼り付けたJSONを統合する</button><button class="soft" id="pasteClearBtn" type="button">入力欄をクリア</button></div></div><p class="muted">JSON読み込みは統合方式。この端末の入力済み項目を優先し、空欄・未登録分を追加。完了チェックは両端末の完了分を残す。読み込み前に両端末でJSONを書き出して保管してな。</p></div></section>
+</main><footer>TRAINING LOG 🥊</footer><script>
+const KEY='nao-training-v3';let db;try{db=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){db={}}db.weeks ||= {};db.checks ||= {};db.weather ||= {};db.logs ||= {};db.off ||= {};db.quests ||= {};const save=()=>localStorage.setItem(KEY,JSON.stringify(db));const pad=n=>String(n).padStart(2,'0');const dateStr=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const addDays=(d,n)=>{let x=new Date(d);x.setDate(x.getDate()+n);return x};const monday=d=>{let x=new Date(d.getFullYear(),d.getMonth(),d.getDate());x.setDate(x.getDate()-(x.getDay()+6)%7);return x};const today=new Date();let weekStart=monday(today),selected=dateStr(today);const days=['月','火','水','木','金','土','日'];const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const strength={A:[['ゴブレットスクワット','15回',3],['ブルガリアンスクワット','左右10回',3],['KBデッドリフト','20回',6],['ヒップリフト','20回',3],['リバースクランチ','15回',3]],B:[['膝つき腕立て','12回',3],['ワンハンドKBロウ','左右12回',3],['ショルダープレス','20回',3],['バイシクルクランチ','左右15回',3],['プランク','60秒',3]],C:[['KBデッドリフト','20回',6],['ブルガリアンスクワット','左右10回',3],['KBスイング','20回',6],['バイシクルクランチ','左右15回',3],['プランク','60秒',3]],D:[['KBスイング','20回',6],['KBデッドリフト','20回',6],['膝つき腕立て','12回',3],['ゴブレットスクワット','15回',3],['リバースクランチ','15回',3]]};
 const shadow=['ジャブ中心（リズム・距離）','ワンツー','ジャブ→右ストレート','ジャブ→左ボディ','ワンツー→左ボディ','ワンツー→右フック','左フック→右ストレート','ステップイン→連打','左右ボディ（打ち分け）','コンビネーション（自由）','試合をイメージ（距離・攻防）','まとめ（自由）'];const bag=['ジャブ・ワンツー','ボディ中心（右・左）','コンビネーション（ジャブ→右→左）','フック・アッパー（角度をつける）','連打（ボディ→フック）','まとめ（自由・試合イメージ）'];const personal=[['前半シャドー','ジャブ・ワンツー（距離と打点）','ステップインジャブ→右スト→再ステップイン→右スト'],['バッグ','ジャブ→右ボディストレート','ステップインジャブ→右ボディ→再ステップイン→左アッパー→右フック'],['後半シャドー','フェイント→踏み込み→連打→離脱','試合想定（距離・攻防・二段階ステップイン）']];
 const seed={'2026-10-19':{normal:'RUN9.04km',rain:'RUN9.04km',raw:'実績：RUN9.04km（543kcal）'},'2026-10-20':{normal:'筋トレA、グローブシャドー12R、RUN5.08km',rain:'筋トレA、グローブシャドー12R、RUN5.08km',raw:'実績：筋トレA、シャドー12R、RUN5.08km'},'2026-10-21':{normal:'パーソナル、RUN5.13km',rain:'パーソナル、RUN5.13km',raw:'実績：パーソナル、RUN5.13km'},'2026-10-22':{normal:'筋トレB、グローブシャドー6R、RUN5km',rain:'筋トレB、グローブシャドー18R',raw:''},'2026-10-23':{normal:'筋トレD、グローブシャドー12R、サンドバッグ6R、ビョンボ10分',rain:'筋トレD、グローブシャドー12R、サンドバッグ6R、ビョンボ10分',raw:''},'2026-10-24':{normal:'筋トレC、グローブシャドー6R、RUN5km',rain:'筋トレC、グローブシャドー18R',raw:''},'2026-10-25':{normal:'RUN5km',rain:'グローブシャドー12R',raw:''}};if(!db.weeks['2026-10-19']){db.weeks['2026-10-19']=seed;save()}
-function getPlan(s){return (db.weeks[dateStr(monday(new Date(s+'T12:00:00')))]||{})[s]||{normal:'',rain:'',raw:''}}function tab(id){document.querySelectorAll('main section').forEach(x=>x.classList.toggle('hidden',x.id!==id));document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));if(id==='today')renderToday();if(id==='week')renderWeek();if(id==='stats')renderStats();if(id==='memo')renderMemo()}document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
-function parseTasks(s,forDate=selected){let out=[];let weekKey=dateStr(monday(new Date(forDate+'T12:00:00')));let quests=(db.quests||{})[weekKey]||{};let shadowMenu=(quests.shadow||[]).length?quests.shadow:shadow;let bagMenu=(quests.bag||[]).length?quests.bag:bag;let m;for(let k of 'ABCD')if(new RegExp('筋トレ\\s*'+k,'i').test(s))out.push({type:'strength',title:'🏋️ 筋トレ'+k,key:'strength'+k,items:strength[k].map(([name,reps,n],i)=>({name:name+' '+reps,checks:n,key:'s'+k+i}))});let shadowMatch=s.match(/(?:グローブ)?シャドー\s*(\d+)\s*R/i);if(shadowMatch){let n=Math.min(36,+shadowMatch[1]);out.push({type:'rounds',title:'🥊 グローブシャドー '+n+'R',key:'shadow',items:Array.from({length:n},(_,i)=>({name:(i+1)+'R '+shadowMenu[i%shadowMenu.length],checks:1,key:'sh'+i}))})}let bagMatch=s.match(/(?:サンドバッグ|バッグ)\s*(\d+)\s*R/i);if(bagMatch){let n=Math.min(24,+bagMatch[1]);out.push({type:'rounds',title:'🥊 サンドバッグ '+n+'R',key:'bag',items:Array.from({length:n},(_,i)=>({name:(i+1)+'R '+bagMenu[i%bagMenu.length],checks:1,key:'bag'+i}))})}if(/パーソナル/.test(s))out.push({type:'personal',title:'🥊 パーソナル',key:'personal',items:personal.flatMap((p,j)=>p.slice(1).map((name,i)=>({name:p[0]+' '+(i+1)+'R '+name,checks:1,key:'p'+j+i})))});if(/グル練/.test(s))out.push({type:'simple',title:'🥊 グル練',key:'group',items:[{name:'グル練 完了',checks:1,key:'group'}]});let run=s.match(/RUN\s*([\d.]+)\s*km/i);if(run)out.push({type:'simple',title:'🏃 RUN',key:'run',items:[{name:'RUN '+run[1]+'km',checks:1,key:'run'}]});let b=s.match(/ビョンボ\s*(\d+)\s*分/);if(b)out.push({type:'simple',title:'🎾 ビョンボ',key:'byon',items:[{name:'ビョンボ '+b[1]+'分',checks:1,key:'byon'}]});return out}
+function getPlan(s){return db.weeks[dateStr(monday(new Date(s+'T12:00:00')))]?.[s]||{normal:'',rain:'',raw:''}}function tab(id){document.querySelectorAll('main section').forEach(x=>x.classList.toggle('hidden',x.id!==id));document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));if(id==='today')renderToday();if(id==='week')renderWeek();if(id==='stats')renderStats();if(id==='memo')renderMemo()}document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+function parseTasks(s,forDate=selected){let out=[];let weekKey=dateStr(monday(new Date(forDate+'T12:00:00')));let quests=db.quests?.[weekKey]||{};let shadowMenu=quests.shadow?.length?quests.shadow:shadow;let bagMenu=quests.bag?.length?quests.bag:bag;let m;for(let k of 'ABCD')if(new RegExp('筋トレ\\s*'+k,'i').test(s))out.push({type:'strength',title:'🏋️ 筋トレ'+k,key:'strength'+k,items:strength[k].map(([name,reps,n],i)=>({name:name+' '+reps,checks:n,key:'s'+k+i}))});let shadowMatch=s.match(/(?:グローブ)?シャドー\s*(\d+)\s*R/i);if(shadowMatch){let n=Math.min(36,+shadowMatch[1]);out.push({type:'rounds',title:'🥊 グローブシャドー '+n+'R',key:'shadow',items:Array.from({length:n},(_,i)=>({name:(i+1)+'R '+shadowMenu[i%shadowMenu.length],checks:1,key:'sh'+i}))})}let bagMatch=s.match(/(?:サンドバッグ|バッグ)\s*(\d+)\s*R/i);if(bagMatch){let n=Math.min(24,+bagMatch[1]);out.push({type:'rounds',title:'🥊 サンドバッグ '+n+'R',key:'bag',items:Array.from({length:n},(_,i)=>({name:(i+1)+'R '+bagMenu[i%bagMenu.length],checks:1,key:'bag'+i}))})}if(/パーソナル/.test(s))out.push({type:'personal',title:'🥊 パーソナル',key:'personal',items:personal.flatMap((p,j)=>p.slice(1).map((name,i)=>({name:p[0]+' '+(i+1)+'R '+name,checks:1,key:'p'+j+i})))});if(/グル練/.test(s))out.push({type:'simple',title:'🥊 グル練',key:'group',items:[{name:'グル練 完了',checks:1,key:'group'}]});let run=s.match(/RUN\s*([\d.]+)\s*km/i);if(run)out.push({type:'simple',title:'🏃 RUN',key:'run',items:[{name:'RUN '+run[1]+'km',checks:1,key:'run'}]});let b=s.match(/ビョンボ\s*(\d+)\s*分/);if(b)out.push({type:'simple',title:'🎾 ビョンボ',key:'byon',items:[{name:'ビョンボ '+b[1]+'分',checks:1,key:'byon'}]});return out}
 function renderToday(){renderLog();let d=new Date(selected+'T12:00:00');$('dateTitle').textContent=selected+'（'+['日','月','火','水','木','金','土'][d.getDay()]+'）';$('days').innerHTML=days.map((day,i)=>{let ds=dateStr(addDays(weekStart,i));return `<button class="${selected===ds?'active':''}" data-day="${ds}">${day}<br>${addDays(weekStart,i).getDate()}</button>`}).join('');document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{selected=b.dataset.day;renderToday()});let weather=db.weather[selected]||'sun';$('sunBtn').classList.toggle('on',weather==='sun');$('rainBtn').classList.toggle('on',weather==='rain');$('offBtn').classList.toggle('offon',!!db.off[selected]);let plan=getPlan(selected),raw=weather==='rain'?(plan.rain||plan.normal):plan.normal;let tasks=parseTasks(raw||'',selected);if(db.off[selected]){$('todayTasks').innerHTML='<div class="off"><h2>🛌 今日はOFF！</h2>休養日に切り替え済み</div>';$('bar').style.width='0%';$('count').textContent='OFF';return}if(!raw){$('todayTasks').innerHTML='<p class="muted">この日のメニューは未登録やで。週間画面から読み込んでな！</p>';$('bar').style.width='0%';$('count').textContent='0 / 0 完了';return}let html='',total=0,done=0;for(let t of tasks){html+=`<div class="group"><h3>${esc(t.title)}</h3>`;for(let item of t.items){let single=item.checks===1;html+=`<div class="exercise ${single?'single-exercise':'multi-exercise'}">`;if(single){let key=selected+'|'+weather+'|'+t.key+'|'+item.key+'|0',checked=!!db.checks[key];total++;if(checked)done++;html+=`<button class="check square-check ${checked?'done':''}" aria-label="${esc(item.name)}を完了" aria-pressed="${checked}" data-check="${esc(key)}">${checked?'✓':''}</button><span class="exercise-title">${esc(item.name)}</span>`}else{html+=`<span class="exercise-title">${esc(item.name)}</span><div class="checks">`;for(let i=0;i<item.checks;i++){let key=selected+'|'+weather+'|'+t.key+'|'+item.key+'|'+i,checked=!!db.checks[key];total++;if(checked)done++;html+=`<button class="check square-check ${checked?'done':''}" aria-label="${i+1}セット目" aria-pressed="${checked}" data-check="${esc(key)}">${checked?'✓':''}</button>`}html+='</div>'}html+='</div>'}html+='</div>'}if(!tasks.length){let key=selected+'|'+weather+'|other|0',checked=!!db.checks[key];total=1;done=checked?1:0;html=`<div class="group"><h3>📋 今日の予定</h3><div class="exercise single-exercise"><button class="check square-check ${checked?'done':''}" data-check="${esc(key)}">${checked?'✓':''}</button><span>${esc(raw)}</span></div></div>`}$('todayTasks').innerHTML=html;document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>{db.checks[b.dataset.check]=!db.checks[b.dataset.check];save();renderToday()});$('bar').style.width=(total?done/total*100:0)+'%';$('count').textContent=done+' / '+total+' 完了'}
 $('sunBtn').onclick=()=>{db.weather[selected]='sun';save();renderToday()};$('rainBtn').onclick=()=>{db.weather[selected]='rain';save();renderToday()};$('offBtn').onclick=()=>{db.off[selected]=!db.off[selected];save();renderToday()};
-function renderWeek(){let key=dateStr(weekStart);let q=(db.quests||{})[key]||{};$('shadowQuest').value=(q.shadow||shadow).map((x,i)=>(i+1)+'R：'+x).join('\n');$('bagQuest').value=(q.bag||bag).map((x,i)=>(i+1)+'R：'+x).join('\n');$('weekRange').textContent=key+' ～ '+dateStr(addDays(weekStart,6));let w=db.weeks[key]||{};$('weekRows').innerHTML=days.map((day,i)=>{let s=dateStr(addDays(weekStart,i)),p=w[s]||{};return `<div class="weekrow"><b>${day}曜　${s}${db.off[s]?' 🛌 OFF':''}</b>${p.normal?'☀️ '+esc(p.normal):'未登録'}${p.rain&&p.rain!==p.normal?'\n🌧️ '+esc(p.rain):''}${p.raw?'\n'+esc(p.raw):''}</div>`}).join('')}$('prevWeek').onclick=()=>{weekStart=addDays(weekStart,-7);selected=dateStr(weekStart);renderWeek()};$('nextWeek').onclick=()=>{weekStart=addDays(weekStart,7);selected=dateStr(weekStart);renderWeek()};$('sampleBtn').onclick=()=>{$('menuText').value='月曜：パーソナル、RUN5km\n火曜：筋トレA、グローブシャドー6R、RUN5km｜雨天：筋トレA、グローブシャドー18R\n水曜：グル練\n木曜：筋トレB、サンドバッグ6R\n金曜：筋トレD、グローブシャドー12R、ビョンボ10分\n土曜：筋トレC、RUN5km｜雨天：筋トレC、グローブシャドー12R\n日曜：RUN5km｜雨天：グローブシャドー12R'};
-function parseMenu(text){let result={},current=null,mode='normal';for(let line of text.split(/\r?\n/)){line=line.trim();if(!line||/^【|^#/.test(line))continue;let m=line.match(/^(?:[■□●]\s*)?(月|火|水|木|金|土|日)(?:曜(?:日)?)?(?:\s*\d{1,2}\/\d{1,2})?\s*[:：\s]+(.*)$/);if(m){let i=days.indexOf(m[1]);current=dateStr(addDays(weekStart,i));result[current]=result[current]||{normal:'',rain:'',raw:''};mode='normal';line=m[2]}else if(!current)continue;let p=result[current];for(let chunk of line.split(/[｜|]/)){chunk=chunk.trim();if(!chunk)continue;if(/^(雨天|雨|雨の日)\s*[:：]/.test(chunk)){p.rain=chunk.replace(/^(雨天|雨|雨の日)\s*[:：]\s*/,'');mode='rain'}else if(/^(通常|晴天|晴れ)\s*[:：]/.test(chunk)){p.normal=chunk.replace(/^(通常|晴天|晴れ)\s*[:：]\s*/,'');mode='normal'}else if(/^(実績|備考|※)/.test(chunk)){p.raw+=(p.raw?'\n':'')+chunk;mode='raw'}else if(mode==='raw')p.raw+=(p.raw?'\n':'')+chunk;else p[mode]+=(p[mode]?'、':'')+chunk}}for(let p of Object.values(result)){if(!p.normal&&p.rain)p.normal=p.rain;if(!p.rain)p.rain=p.normal}return result}
+function renderWeek(){let key=dateStr(weekStart);let q=db.quests?.[key]||{};$('shadowQuest').value=(q.shadow||shadow).map((x,i)=>(i+1)+'R：'+x).join('\n');$('bagQuest').value=(q.bag||bag).map((x,i)=>(i+1)+'R：'+x).join('\n');$('weekRange').textContent=key+' ～ '+dateStr(addDays(weekStart,6));let w=db.weeks[key]||{};$('weekRows').innerHTML=days.map((day,i)=>{let s=dateStr(addDays(weekStart,i)),p=w[s]||{};return `<div class="weekrow"><b>${day}曜　${s}${db.off[s]?' 🛌 OFF':''}</b>${p.normal?'☀️ '+esc(p.normal):'未登録'}${p.rain&&p.rain!==p.normal?'\n🌧️ '+esc(p.rain):''}${p.raw?'\n'+esc(p.raw):''}</div>`}).join('')}$('prevWeek').onclick=()=>{weekStart=addDays(weekStart,-7);selected=dateStr(weekStart);renderWeek()};$('nextWeek').onclick=()=>{weekStart=addDays(weekStart,7);selected=dateStr(weekStart);renderWeek()};$('sampleBtn').onclick=()=>{$('menuText').value='月曜：パーソナル、RUN5km\n火曜：筋トレA、グローブシャドー6R、RUN5km｜雨天：筋トレA、グローブシャドー18R\n水曜：グル練\n木曜：筋トレB、サンドバッグ6R\n金曜：筋トレD、グローブシャドー12R、ビョンボ10分\n土曜：筋トレC、RUN5km｜雨天：筋トレC、グローブシャドー12R\n日曜：RUN5km｜雨天：グローブシャドー12R'};
+function parseMenu(text){let result={},current=null,mode='normal';for(let line of text.split(/\r?\n/)){line=line.trim();if(!line||/^【|^#/.test(line))continue;let m=line.match(/^(?:[■□●]\s*)?(月|火|水|木|金|土|日)(?:曜(?:日)?)?(?:\s*\d{1,2}\/\d{1,2})?\s*[:：\s]+(.*)$/);if(m){let i=days.indexOf(m[1]);current=dateStr(addDays(weekStart,i));result[current]||={normal:'',rain:'',raw:''};mode='normal';line=m[2]}else if(!current)continue;let p=result[current];for(let chunk of line.split(/[｜|]/)){chunk=chunk.trim();if(!chunk)continue;if(/^(雨天|雨|雨の日)\s*[:：]/.test(chunk)){p.rain=chunk.replace(/^(雨天|雨|雨の日)\s*[:：]\s*/,'');mode='rain'}else if(/^(通常|晴天|晴れ)\s*[:：]/.test(chunk)){p.normal=chunk.replace(/^(通常|晴天|晴れ)\s*[:：]\s*/,'');mode='normal'}else if(/^(実績|備考|※)/.test(chunk)){p.raw+=(p.raw?'\n':'')+chunk;mode='raw'}else if(mode==='raw')p.raw+=(p.raw?'\n':'')+chunk;else p[mode]+=(p[mode]?'、':'')+chunk}}for(let p of Object.values(result)){if(!p.normal&&p.rain)p.normal=p.rain;if(!p.rain)p.rain=p.normal}return result}
 function questLines(text,max){return text.split(/\r?\n/).map(x=>x.trim().replace(/^(?:[・\-]\s*)?(?:\d+\s*(?:R|Ｒ|ラウンド)?\s*[:：.)．、-]\s*)/i,'').trim()).filter(Boolean).slice(0,max)}
 $('saveQuest').onclick=()=>{let key=dateStr(weekStart),a=questLines($('shadowQuest').value,36),b=questLines($('bagQuest').value,24);if(!a.length||!b.length)return alert('シャドーとバッグのクエストをそれぞれ1R以上入力してな！');db.quests[key]={shadow:a,bag:b};save();renderWeek();renderToday();alert('この週のクエストを保存したで！')};
 $('resetQuest').onclick=()=>{if(!confirm('この週のクエストを標準メニューに戻すで？'))return;delete db.quests[dateStr(weekStart)];save();renderWeek();renderToday()};
-$('importBtn').onclick=()=>{let text=$('menuText').value.trim();if(!text)return alert('メニューを入力してな！');let parsed=parseMenu(text);if(!Object.keys(parsed).length)return alert('「月曜：...」の形式で入力してな！');let key=dateStr(weekStart);db.weeks[key]=Object.assign({},db.weeks[key]||{},parsed);save();renderWeek();alert(Object.keys(parsed).length+'日分を登録したで！')};
-function renderLog(){$('logDate').textContent=selected;let x=db.logs[selected]||{};for(let k of ['runKm','weight','otherKcal','memo'])$(k).value=(x[k]==null?'':x[k]);calcRun()}function calcRun(){let km=+$('runKm').value||0,w=+$('weight').value||0;$('runKcal').textContent=Math.round(km*w*1.036)}$('runKm').oninput=calcRun;$('weight').oninput=calcRun;$('saveLog').onclick=()=>{db.logs[selected]={runKm:$('runKm').value,weight:$('weight').value,otherKcal:$('otherKcal').value,memo:$('memo').value};save();alert('記録を保存したで！')};function renderMemo(){const list=Object.entries(db.logs||{}).filter(([,x])=>String(x.memo||'').trim()).sort(([a],[b])=>b.localeCompare(a));$('memoList').innerHTML=list.length?list.map(([date,x])=>`<div class="memo-entry"><b>${esc(date)}</b><p>${esc(x.memo)}</p><button class="soft" data-editmemo="${esc(date)}">この日のメモを編集</button></div>`).join(''):'<p class="muted">まだメモはないで。TODAYから記録してな！</p>';document.querySelectorAll('[data-editmemo]').forEach(b=>b.onclick=()=>{selected=b.dataset.editmemo;weekStart=monday(new Date(selected+'T12:00:00'));tab('today');$('memo').focus();$('memo').scrollIntoView({behavior:'smooth',block:'center'})})}
-function renderStats(){let logs=Object.values(db.logs);$('statDays').textContent=logs.length;$('statKm').textContent=logs.reduce((a,x)=>a+(+x.runKm||0),0).toFixed(2)+' km';$('statKcal').textContent=Math.round(logs.reduce((a,x)=>a+(+x.runKm||0)*(+x.weight||0)*1.036+(+x.otherKcal||0),0))+' kcal';$('statChecks').textContent=Object.values(db.checks).filter(Boolean).length} function showLegacyJson(){
- var panel=$('legacyJsonPanel'),field=$('legacyJsonText');
- field.value=JSON.stringify(db,null,2);
- panel.classList.remove('hidden');
- panel.scrollIntoView();
- field.scrollTop=0;
+$('importBtn').onclick=()=>{let text=$('menuText').value.trim();if(!text)return alert('メニューを入力してな！');let parsed=parseMenu(text);if(!Object.keys(parsed).length)return alert('「月曜：...」の形式で入力してな！');let key=dateStr(weekStart);db.weeks[key]={...db.weeks[key],...parsed};save();renderWeek();alert(Object.keys(parsed).length+'日分を登録したで！')};
+function renderLog(){$('logDate').textContent=selected;let x=db.logs[selected]||{};for(let k of ['runKm','weight','otherKcal','memo'])$(k).value=x[k]??'';calcRun()}function calcRun(){let km=+$('runKm').value||0,w=+$('weight').value||0;$('runKcal').textContent=Math.round(km*w*1.036)}$('runKm').oninput=calcRun;$('weight').oninput=calcRun;$('saveLog').onclick=()=>{db.logs[selected]={runKm:$('runKm').value,weight:$('weight').value,otherKcal:$('otherKcal').value,memo:$('memo').value};save();alert('記録を保存したで！')};function renderMemo(){const list=Object.entries(db.logs||{}).filter(([,x])=>String(x.memo||'').trim()).sort(([a],[b])=>b.localeCompare(a));$('memoList').innerHTML=list.length?list.map(([date,x])=>`<div class="memo-entry"><b>${esc(date)}</b><p>${esc(x.memo)}</p><button class="soft" data-editmemo="${esc(date)}">この日のメモを編集</button></div>`).join(''):'<p class="muted">まだメモはないで。TODAYから記録してな！</p>';document.querySelectorAll('[data-editmemo]').forEach(b=>b.onclick=()=>{selected=b.dataset.editmemo;weekStart=monday(new Date(selected+'T12:00:00'));tab('today');$('memo').focus();$('memo').scrollIntoView({behavior:'smooth',block:'center'})})}
+function renderStats(){let logs=Object.values(db.logs);$('statDays').textContent=logs.length;$('statKm').textContent=logs.reduce((a,x)=>a+(+x.runKm||0),0).toFixed(2)+' km';$('statKcal').textContent=Math.round(logs.reduce((a,x)=>a+(+x.runKm||0)*(+x.weight||0)*1.036+(+x.otherKcal||0),0))+' kcal';$('statChecks').textContent=Object.values(db.checks).filter(Boolean).length} $('exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='training-log-backup-'+dateStr(new Date())+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};// Merge import: keep local nonempty values; fill gaps from the imported device.
+function isRecord(v){return v!==null&&typeof v==='object'&&!Array.isArray(v)}
+function hasValue(v){return v!==undefined&&v!==null&&!(typeof v==='string'&&v.trim()==='')}
+function mergeMissing(local,incoming){
+ if(!isRecord(local)||!isRecord(incoming))return local;
+ Object.keys(incoming).forEach(function(key){
+  var value=incoming[key];
+  if(!Object.prototype.hasOwnProperty.call(local,key)||!hasValue(local[key])){
+   if(hasValue(value))local[key]=value;
+  }else if(isRecord(local[key])&&isRecord(value)){
+   mergeMissing(local[key],value);
+  }
+ });
+ return local;
 }
-$('copyExportBtn').onclick=showLegacyJson;
-function legacyCopyAll(){
- var f=$('legacyJsonText'),button=$('legacyCopyJson'),original=button.textContent;
- var previousReadonly=f.readOnly;
- // iOS 12 Safari: focus + selection + synchronous execCommand(copy) in tap handler.
- f.readOnly=false;
- f.focus();
- f.select();
- try{f.setSelectionRange(0,f.value.length)}catch(e){}
- var success=false;
- try{success=document.execCommand('copy')}catch(e){}
- f.readOnly=previousReadonly;
- if(success){
-  button.textContent='✅ コピーできたで！';
-  alert('JSON全文をコピーしたで！ メモに貼り付けて確認してな。');
- }else{
-  button.textContent='コピーできませんでした';
-  alert('このiPadでは自動コピーができませんでした。JSON欄を長押しして「すべてを選択」→「コピー」を試してな。');
- }
- setTimeout(function(){button.textContent=original},3500);
+function mergeTrainingData(local,incoming){
+ ['weeks','checks','weather','logs','off','quests'].forEach(function(k){
+  if(!isRecord(local[k]))local[k]={};
+  if(!isRecord(incoming[k]))return;
+  if(k==='checks'){
+   // A completed checkbox on either device stays completed.
+   Object.keys(incoming[k]).forEach(function(key){
+    if(incoming[k][key]===true)local[k][key]=true;
+    else if(!Object.prototype.hasOwnProperty.call(local[k],key))local[k][key]=incoming[k][key];
+   });
+  }else{
+   mergeMissing(local[k],incoming[k]);
+  }
+ });
+ return local;
 }
-$('legacyCopyJson').onclick=legacyCopyAll;
-$('legacySelectJson').onclick=function(){var f=$('legacyJsonText');f.focus();f.select();try{f.setSelectionRange(0,f.value.length)}catch(e){}};
-$('legacyCloseJson').onclick=function(){$('legacyJsonPanel').classList.add('hidden')};
-$('exportBtn').onclick=function(){
- // iOS 12のホーム画面アプリはblobダウンロードが動作しない場合がある。
- // 旧iPadでは確実にコピーできる画面を表示する。
- var ua=navigator.userAgent||'';
- var oldIOS=/OS (?:[1-9]|1[0-2])[_\d]* like Mac OS X/.test(ua);
- if(oldIOS){showLegacyJson();return}
+$('restoreFile').onchange=async function(e){
+ var f=e.target.files&&e.target.files[0];if(!f)return;
  try{
-  var blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
-  var a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='training-log-backup-'+dateStr(new Date())+'.json';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
-  setTimeout(function(){URL.revokeObjectURL(a.href)},10000);
- }catch(e){showLegacyJson();}
+  var x=JSON.parse(await f.text());
+  if(!isRecord(x)||!isRecord(x.weeks)||!isRecord(x.checks)||!isRecord(x.logs))throw Error('バックアップの形式が違う');
+  if(!confirm('現在の記録を残したまま、JSONの未登録データ・空欄を統合するで？\n\n同じ項目に両方の値がある場合は、この端末の値を優先する。\n完了チェックは両端末の完了分を残す。'))return;
+  // Work on a copy, so a malformed backup cannot partly modify live data.
+  var merged=mergeTrainingData(JSON.parse(JSON.stringify(db)),x);
+  localStorage.setItem(KEY,JSON.stringify(merged));db=merged;
+  renderToday();renderWeek();renderStats();renderMemo();
+  alert('統合完了！ この端末の記録を残して、未登録分を追加したで！');
+ }catch(err){alert('読み込み失敗：'+err.message)}
+ finally{e.target.value=''}
 };
-function mergeTrainingData(current,incoming){
- var result={data:{},added:0,conflicts:[]};
- function isObj(v){return v!==null&&typeof v==='object'&&!Array.isArray(v)}
- function empty(v){return v===undefined||v===null||v===''}
- function same(a,b){return JSON.stringify(a)===JSON.stringify(b)}
- function join(a,b,path,section){
-  if(empty(a)){if(!empty(b))result.added++;return b}
-  if(empty(b))return a;
-  if(section==='checks'&&typeof a==='boolean'&&typeof b==='boolean'){
-   if(b&&!a)result.added++;
-   return a||b;
-  }
-  if(isObj(a)&&isObj(b)){
-   var out={},keys={},k;
-   Object.keys(a).forEach(function(t){keys[t]=1});
-   Object.keys(b).forEach(function(t){keys[t]=1});
-   Object.keys(keys).forEach(function(t){out[t]=join(a[t],b[t],path?path+' / '+t:t,section)});
-   return out;
-  }
-  if(!same(a,b))result.conflicts.push(path);
-  return a;
- }
- var keys={};Object.keys(current||{}).forEach(function(k){keys[k]=1});Object.keys(incoming||{}).forEach(function(k){keys[k]=1});
- Object.keys(keys).forEach(function(k){result.data[k]=join(current[k],incoming[k],k,k)});
- ['weeks','checks','weather','logs','off','quests'].forEach(function(k){if(!isObj(result.data[k]))result.data[k]={}});
- return result;
-}
-$('restoreFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let fileContents=await new Promise((resolve,reject)=>{let reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error||new Error('ファイルを読み込めません'));reader.readAsText(f,'UTF-8')});let x=JSON.parse(fileContents);if(!x||typeof x!=='object'||Array.isArray(x)||!x.weeks||typeof x.weeks!=='object'||!x.checks||typeof x.checks!=='object'||!x.logs||typeof x.logs!=='object')throw Error('形式が違う');if(!confirm('JSONを現在の記録に統合するで？\n空欄は補完し、完了チェックは両方残す。\n同じ項目に違う内容があれば、今の端末の内容を優先するで。'))return;
-let result=mergeTrainingData(db,x);
-if(result.conflicts.length){
- let preview=result.conflicts.slice(0,12).join('\n');
- if(result.conflicts.length>12)preview+='\nほか '+(result.conflicts.length-12)+' 件';
- if(!confirm('異なる内容が '+result.conflicts.length+' 件あるで。\n今の端末の値を残し、空欄だけ補完する。\n\n'+preview+'\n\nこの内容で統合する？'))return;
-}
-let oldDb=db;try{db=result.data;save()}catch(saveErr){db=oldDb;throw saveErr}
-renderToday();renderWeek();renderStats();alert('統合完了！\n追加・補完 '+result.added+' 件 / 競合 '+result.conflicts.length+' 件\n念のためJSONバックアップも保存してな！')}catch(err){alert('読み込み失敗：'+err.message)}};
+$('pasteMergeBtn').onclick=function(){
+ var raw=$('pasteJson').value.trim();
+ if(!raw){alert('iCloudメモからJSON全文を貼り付けてな！');return;}
+ try{
+  var incoming=JSON.parse(raw);
+  if(!isRecord(incoming)||!isRecord(incoming.weeks)||!isRecord(incoming.checks)||!isRecord(incoming.logs))throw Error('バックアップの形式が違うで。JSON全文をコピーしたか確認してな');
+  if(!confirm('iPadのJSONをこのiPhoneの記録に統合するで？\n\nこのiPhoneの入力済み項目を優先し、空欄・未登録分を追加。完了チェックは両方残す。\n\n統合前にバックアップを取っておくのがおすすめやで。'))return;
+  var merged=mergeTrainingData(JSON.parse(JSON.stringify(db)),incoming);
+  localStorage.setItem(KEY,JSON.stringify(merged));db=merged;
+  renderToday();renderWeek();renderStats();renderMemo();
+  $('pasteJson').value='';
+  alert('JSON統合完了！ iPhoneの記録を残して、iPadの未登録分を追加したで！');
+ }catch(err){alert('統合できんかった：'+err.message)}
+};
+$('pasteClearBtn').onclick=function(){$('pasteJson').value=''};
 let timerId=null,remaining=120,phase='round',running=false,currentRound=1;
 let audioCtx=null,lastTickAt=0;
-function unlockAudio(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();}catch(e){console.warn('Audio unavailable',e)}}
+function unlockAudio(){try{audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();}catch(e){console.warn('Audio unavailable',e)}}
 function tone(freq,start,duration,volume=0.3){if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.setValueAtTime(freq,start);g.gain.setValueAtTime(0.0001,start);g.gain.exponentialRampToValueAtTime(volume,start+0.012);g.gain.exponentialRampToValueAtTime(0.0001,start+duration);o.connect(g);g.connect(audioCtx.destination);o.start(start);o.stop(start+duration+0.02)}
 function synthesizedGong(){
  if(!audioCtx)return;
@@ -158,31 +136,58 @@ $('testSound').onclick=()=>{unlockAudio();gong();setTimeout(clappers,2200)};
 
 function standaloneMode(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
 function showStandalonePrint(html,kind){
- // iOS 12 standalone: do not use html2canvas/html2pdf (can hang indefinitely).
- // Preserve native WebKit print and offer a Safari handoff.
+ // Keep the same WebKit window. iOS installed web apps often block printing in popup windows.
+ const pdfName=kind==='weekly'?'週間トレーニング.pdf':'月間トレーニングレポート.pdf';
  const script=`<script>
+ const pdfFileName=${JSON.stringify(pdfName)};
  function returnToTraining(){location.reload()}
- function legacyPrint(){
-   var b=document.getElementById('reportPdfButton')||document.getElementById('savePdf');
-   if(b){b.disabled=false;b.textContent='🖨️ 印刷 / PDF保存';}
-   try{window.print()}catch(e){alert('このホーム画面アプリでは印刷を開けません。Safariで開いて印刷してください。')}
+ function loadPdfEngine(){return new Promise((resolve,reject)=>{
+   if(window.html2pdf){resolve();return}
+   const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+   s.onload=resolve;s.onerror=()=>reject(new Error('PDF変換ライブラリを読み込めませんでした。ネット接続を確認してください。'));
+   document.head.appendChild(s);
+ })}
+ async function savePdfInApp(){
+  const btn=document.getElementById('savePdf')||document.getElementById('reportPdfButton');
+  const original=btn.textContent;btn.disabled=true;btn.textContent='PDF作成中…';
+  try{
+   await loadPdfEngine();
+   const source=document.querySelector('.sheet')||document.getElementById('reportContent');
+   if(!source)throw new Error('印刷内容が見つかりません');
+   let blob;
+   if(source.classList.contains('sheet')){
+     // Render the fixed A4 sheet to a single image, then place it on one PDF page.
+     // Avoid html2pdf's page-break/clone logic, which fails on some iOS standalone WebViews.
+     const canvas=await html2canvas(source,{scale:2,backgroundColor:'#ffffff',useCORS:true,scrollY:0,windowWidth:Math.max(800,source.scrollWidth),onclone:(doc)=>{
+       const el=doc.querySelector('.sheet');if(el){el.style.transform='none';el.style.margin='0';}
+     }});
+     const pdf=new jspdf.jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+     pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',10,10,190,259);
+     blob=pdf.output('blob');
+   }else{
+     const opts={margin:12,filename:pdfFileName,image:{type:'jpeg',quality:.95},html2canvas:{scale:2,useCORS:true,scrollY:0},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css','legacy']}};
+     blob=await html2pdf().set(opts).from(source).outputPdf('blob');
+   }
+   const file=new File([blob],pdfFileName,{type:'application/pdf'});
+   if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){
+     await navigator.share({files:[file],title:pdfFileName});
+   }else{
+     const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=pdfFileName;a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);
+   }
+  }catch(e){if(e.name!=='AbortError')alert('PDF作成ができませんでした：'+e.message)}
+  finally{btn.disabled=false;btn.textContent=original}
  }
- function safariHelp(){
-   var url=location.href;
-   window.prompt('SafariでこのURLを開いてください（長押しでコピーできます）',url);
- }
- window.addEventListener('DOMContentLoaded',function(){
-   var back=document.querySelector('.back-btn,.back-link');
-   if(back){back.href='#';back.onclick=function(e){e.preventDefault();returnToTraining()}}
-   var b=document.getElementById('reportPdfButton')||document.getElementById('savePdf');
-   if(b){b.onclick=legacyPrint;b.textContent='🖨️ 印刷 / PDF保存';b.disabled=false;}
-   var help=document.createElement('button');help.type='button';help.textContent='🌐 Safariで開く方法';
-   help.style.cssText='padding:12px;border:0;border-radius:8px;background:#e7edf7;color:#123456;font-weight:bold;';
-   help.onclick=safariHelp;
-   if(b&&b.parentNode)b.parentNode.appendChild(help);
+ window.addEventListener('DOMContentLoaded',()=>{
+  const back=document.querySelector('.back-btn,.back-link');if(back){back.href='#';back.onclick=e=>{e.preventDefault();returnToTraining()}}
+  const print=document.getElementById('savePdf')||document.getElementById('reportPdfButton');
+  if(print){print.onclick=savePdfInApp;print.textContent='📄 PDF作成・共有';}
  });
 <\/script>`;
- if(kind==='monthly')html=html.replace('<button onclick="window.print()">','<button id="reportPdfButton" type="button">');
+ if(kind==='monthly'){
+   html=html.replace('<h1>🥊 TRAINING LOG', '<div id="reportContent"><h1>🥊 TRAINING LOG');
+   html=html.replace('</body></html>','</div></body></html>');
+   html=html.replace('<button onclick="window.print()">','<button id="reportPdfButton" type="button">');
+ }
  html=html.replace('</body></html>',script+'</body></html>');
  document.open();document.write(html);document.close();
 }
@@ -203,10 +208,10 @@ function weeklyPrint(){
  const roundRows=(arr,n)=>Array.from({length:n},(_,i)=>`<div class="rline"><b>${i+1}R</b><span class="tinybox"></span><span>${esc(arr[i%arr.length])}</span></div>`).join('');
  const runPlans=weekday.map((_,i)=>(wk[dateStr(addDays(startDay,i))]||{}).normal||'');
  const runCount=runPlans.filter(x=>/RUN\s*[\d.]+\s*km/i.test(x)).length;
- const runKm=runPlans.reduce((n,x)=>n+(Number(((x.match(/RUN\s*([\d.]+)\s*km/i))||[])[1]||0)),0);
- const shTotal=runPlans.reduce((n,x)=>n+(Number(((x.match(/(?:グローブ)?シャドー\s*(\d+)\s*R/i))||[])[1]||0)),0);
- const bagTotal=runPlans.reduce((n,x)=>n+(Number(((x.match(/(?:サンドバッグ|バッグ)\s*(\d+)\s*R/i))||[])[1]||0)),0);
- const byonTotal=runPlans.reduce((n,x)=>n+(Number(((x.match(/ビョンボ\s*(\d+)\s*分/))||[])[1]||0)),0);
+ const runKm=runPlans.reduce((n,x)=>n+(Number(x.match(/RUN\s*([\d.]+)\s*km/i)?.[1]||0)),0);
+ const shTotal=runPlans.reduce((n,x)=>n+(Number(x.match(/(?:グローブ)?シャドー\s*(\d+)\s*R/i)?.[1]||0)),0);
+ const bagTotal=runPlans.reduce((n,x)=>n+(Number(x.match(/(?:サンドバッグ|バッグ)\s*(\d+)\s*R/i)?.[1]||0)),0);
+ const byonTotal=runPlans.reduce((n,x)=>n+(Number(x.match(/ビョンボ\s*(\d+)\s*分/)?.[1]||0)),0);
  const activeStrength='ABCD'.split('').filter(k=>new RegExp('筋トレ\\s*'+k).test(runPlans.join('、'))).length;
  const returnUrl=location.href.replace(/&/g,"&amp;").replace(/"/g,"&quot;");
  const html=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${dateStr(startDay)} 週間トレーニング</title><style>
@@ -293,7 +298,7 @@ $('printMonthly').onclick=()=>{
    const ticks=Array.from({length:5},(_,i)=>{let v=low+(high-low)*i/4;return `<line x1="48" x2="674" y1="${y(v)}" y2="${y(v)}" stroke="#e2e9f4"/><text x="41" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#66758c">${v.toFixed(1)}</text>`}).join('');
    const dots=weights.map(a=>`<circle cx="${x(a.d)}" cy="${y(a.w)}" r="3.5" fill="#1557bb"><title>${a.d}: ${a.w} kg</title></circle>`).join('');
    weightGraph=`<svg viewBox="0 0 700 160" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">${ticks}<polyline points="${points}" fill="none" stroke="#1557bb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>${dots}<text x="48" y="150" font-size="11" fill="#66758c">1日</text><text x="674" y="150" text-anchor="end" font-size="11" fill="#66758c">31日</text></svg>`;
-   const delta=weights[weights.length-1].w-weights[0].w;weightSummary=`${weights[0].w.toFixed(1)} → ${weights[weights.length-1].w.toFixed(1)} kg（${delta>0?'+':''}${delta.toFixed(1)} kg）`;
+   const delta=weights.at(-1).w-weights[0].w;weightSummary=`${weights[0].w.toFixed(1)} → ${weights.at(-1).w.toFixed(1)} kg（${delta>0?'+':''}${delta.toFixed(1)} kg）`;
   }
  const html=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${month} 月間トレーニングレポート</title><style>@page{size:A4 portrait;margin:15mm}body{font-family:-apple-system,'Helvetica Neue',sans-serif;color:#17243c;margin:0}h1{font-size:23px;border-bottom:3px solid #1764ca;padding-bottom:12px}h2{font-size:16px;margin-top:24px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric{background:#eef4ff;border-radius:8px;padding:14px;font-size:12px}.metric b{display:block;font-size:22px;margin-top:8px}table{width:100%;border-collapse:collapse;font-size:11px}h2,svg,.metric,.journal-entry{break-inside:avoid}.journal{break-before:page}.journal-entry{padding:8px 0;border-bottom:1px solid #dbe2ee}.journal-entry p{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.6;margin:5px 0}td,th{padding:8px;border-bottom:1px solid #dbe2ee;text-align:left;overflow-wrap:anywhere}th{background:#eef4ff}p{font-size:11px;color:#53647b}.report-nav{display:flex;gap:10px;align-items:center;margin:10px 0 20px;flex-wrap:wrap}.report-nav a,.report-nav button{padding:12px 16px;border:0;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none}.report-nav a{background:#e7edf7;color:#123456}.report-nav button{background:#1764ca;color:white}.no-print{margin:0}@media screen and (max-width:650px){html,body{max-width:100%;overflow-x:hidden}body{padding:0 12px}h1{font-size:19px;line-height:1.4;overflow-wrap:anywhere}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric{padding:10px;font-size:12px;min-width:0}.metric b{font-size:19px}.report-nav{position:sticky;top:0;background:white;z-index:10;padding:8px 0}.report-nav a,.report-nav button{font-size:13px;padding:11px 10px}table{table-layout:fixed;font-size:10px}td,th{padding:6px 3px;word-break:break-word}}@media print{.no-print{display:none}} </style></head><body><nav class="report-nav no-print"><a href="${returnUrl}" class="back-link">← アプリに戻る</a><button onclick="window.print()">🖨️ 印刷 / PDF保存</button></nav><h1>🥊 TRAINING LOG｜${safe(month.slice(0,4))}年${Number(month.slice(5))}月 月間トレーニングレポート</h1><p>対象：${safe(month)}　｜　作成日：${dateStr(new Date())}</p><div class="grid"><div class="metric">トレーニング記録日数<b>${days.size} 日</b></div><div class="metric">RUN総距離<b>${km.toFixed(2)} km</b></div><div class="metric">総運動消費<b>${Math.round(kcal)} kcal</b></div><div class="metric">シャドー完了<b>${shadow} R</b></div><div class="metric">サンドバッグ完了<b>${bag} R</b></div><div class="metric">筋トレ完了セット<b>${strength} セット</b></div><div class="metric">パーソナル完了項目<b>${personal}</b></div><div class="metric">RUN完了チェック<b>${count('run')} 回</b></div><div class="metric">OFF設定<b>${off} 日</b></div></div><h2>体重の推移</h2><p>${weightSummary}｜記録 ${weights.length} 回</p>${weightGraph}<h2>日別の運動記録</h2><table><thead><tr><th>日付</th><th>RUN (km)</th><th>消費 (kcal)</th><th>メモ</th></tr></thead><tbody>${rows||'<tr><td colspan="4">記録なし</td></tr>'}</tbody></table><section class="journal"><h2>📝 練習日誌</h2>${entries.filter(([,x])=>String(x.memo||'').trim()).map(([d,x])=>`<div class="journal-entry"><b>${safe(d)}</b><p>${safe(x.memo).replace(/\n/g,'<br>')}</p></div>`).join('')||'<p>メモの記録なし</p>'}</section><p>集計元：この端末に保存された記録・完了チェック。消費カロリー＝RUN距離×体重×1.036＋その他運動消費。未入力分は含まれません。</p></body></html>`;
  if(standaloneMode()){showStandalonePrint(html,'monthly');return}

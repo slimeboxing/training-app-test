@@ -6,7 +6,7 @@
 <section id="week" class="hidden"><div class="panel"><h2>📋 GPTの週間メニューを読込</h2><p class="muted">月〜日の予定を1行ずつ入力。「通常」「雨天」「実績」も書けるで！ 筋トレA〜Dは内蔵済み。下のクエストも週ごとに変更できるで。</p><textarea id="menuText" placeholder="月曜：筋トレA、グローブシャドー6R、RUN5km&#10;火曜：パーソナル&#10;水曜：筋トレB、サンドバッグ6R"></textarea><div class="buttons"><button class="primary" id="importBtn">この週に読み込む</button><button class="soft" id="sampleBtn">入力例</button></div><p class="note">読込すると選択中の週の予定が更新される。過去の練習記録は残る。</p></div><div class="panel"><h2>📅 週間メニュー</h2><div class="buttons"><button class="soft" id="prevWeek">← 前週</button><button class="soft" id="nextWeek">次週 →</button></div><span class="pill" id="weekRange"></span><div id="weekRows"></div></div><div class="panel"><h2>🥊 今週のクエスト（自由編集）</h2><p class="muted">GPTが作った各Rの内容をそのまま貼り付け。選択中の週だけ更新するで。1行に1R、番号なしでもOK。</p><label>グローブシャドー（最大36R）</label><textarea id="shadowQuest" rows="12" placeholder="1R：刺しジャブ＋前後ステップ&#10;2R：ジャブ→右ストレート→左フック"></textarea><label>サンドバッグ（最大24R）</label><textarea id="bagQuest" rows="6" placeholder="1R：ジャブ→右ストレート&#10;2R：右フック→ボディ"></textarea><div class="buttons"><button class="primary" id="saveQuest">この週のクエストを保存</button><button class="soft" id="resetQuest">固定メニューに戻す</button></div><p class="note">週間PDFはGPTで作成。アプリはメニューの読込・記録・月間レポート出力に専念するで。</p></div></section>
 <section id="timer" class="hidden"><div class="panel"><h2>⏱️ ラウンドタイマー</h2><p class="muted">開始・終了は実録のボクシングゴング、終了10秒前は拍子木2回。指定のゴング音をアプリに内蔵済み！</p><label>ラウンド（秒）</label><input id="roundSeconds" type="number" min="1" value="120"><label>ラウンド数</label><input id="roundCount" type="number" min="1" max="99" value="6"><p class="muted" id="roundProgress">1 / 6 R</p><label>休憩（秒）</label><input id="restSeconds" type="number" min="0" value="30"><div class="timer" id="clock">02:00</div><p class="muted" id="timerPhase">ラウンド</p><div class="buttons"><button class="primary" id="startTimer">スタート</button><button class="soft" id="pauseTimer">一時停止</button><button class="soft" id="resetTimer">リセット</button><button class="soft" id="testSound">🔔 音テスト</button></div></div></section>
 <section id="memo" class="hidden"><div class="panel"><h2>📝 TRAINING MEMO</h2><p class="muted">日付を選んで過去の練習メモを読んだり、編集できるで！</p><div id="memoList"></div></div></section><section id="stats" class="hidden"><div class="panel"><h2>📊 集計</h2><div class="grid"><div><div class="muted">記録日数</div><div class="metric" id="statDays">0</div></div><div><div class="muted">RUN総距離</div><div class="metric" id="statKm">0 km</div></div><div><div class="muted">運動消費合計</div><div class="metric" id="statKcal">0 kcal</div></div><div><div class="muted">完了チェック数</div><div class="metric" id="statChecks">0</div></div></div></div><div class="panel"><h3>📄 月間レポート（A4）</h3><label>対象月</label><input id="reportMonth" type="month"><p class="muted">記録と完了チェックから月別に集計。印刷画面からPDF保存もできるで！</p><button class="primary" id="printMonthly">月間レポートを印刷 / PDF保存</button></div><div class="panel"><h3>💾 データのバックアップ</h3><div class="buttons"><button class="primary" id="exportBtn">JSONを書き出す</button><button class="soft" id="copyExportBtn">📋 JSONを表示・コピー（旧iPad用）</button><label class="soft restore-button" style="cursor:pointer;margin:0">JSONを統合する<input id="restoreFile" type="file" accept="application/json,.json" style="display:none"></label></div><p class="muted">記録はこの端末に保存。JSON統合は空欄を補完し、完了チェックは両方残す。同じ項目の内容が異なる場合は確認後、端末側を優先。統合前後はバックアップ推奨。</p></div></section>
-<div id="legacyJsonPanel" class="panel hidden" style="max-width:740px;margin:12px auto 24px"><h2>📋 JSONバックアップ</h2><p class="note">下の文字をすべて選択してコピーし、メモなどに貼り付けて保存してな。記録はこの画面を閉じても消えへんで。</p><textarea id="legacyJsonText" readonly style="min-height:260px;font-size:12px;line-height:1.4" spellcheck="false"></textarea><div class="buttons"><button class="primary" id="legacySelectJson">全文を選択</button><button class="soft" id="legacyCloseJson">閉じる</button></div></div></main><footer>TRAINING LOG 🥊</footer><script>
+<div id="legacyJsonPanel" class="panel hidden" style="max-width:740px;margin:12px auto 24px"><h2>📋 JSONバックアップ</h2><p class="note">下の文字をすべて選択してコピーし、メモなどに貼り付けて保存してな。記録はこの画面を閉じても消えへんで。</p><textarea id="legacyJsonText" readonly style="min-height:260px;font-size:12px;line-height:1.4" spellcheck="false"></textarea><div class="buttons"><button class="primary" id="legacyCopyJson">📋 全文をコピー</button><button class="soft" id="legacySelectJson">全文を選択</button><button class="soft" id="legacyCloseJson">閉じる</button></div></div></main><footer>TRAINING LOG 🥊</footer><script>
 const KEY='nao-training-v3';let db;try{db=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){db={}}db.weeks=db.weeks||{};db.checks=db.checks||{};db.weather=db.weather||{};db.logs=db.logs||{};db.off=db.off||{};db.quests=db.quests||{};const save=()=>localStorage.setItem(KEY,JSON.stringify(db));const pad=n=>String(n).padStart(2,'0');const dateStr=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const addDays=(d,n)=>{let x=new Date(d);x.setDate(x.getDate()+n);return x};const monday=d=>{let x=new Date(d.getFullYear(),d.getMonth(),d.getDate());x.setDate(x.getDate()-(x.getDay()+6)%7);return x};const today=new Date();let weekStart=monday(today),selected=dateStr(today);const days=['月','火','水','木','金','土','日'];const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const strength={A:[['ゴブレットスクワット','15回',3],['ブルガリアンスクワット','左右10回',3],['KBデッドリフト','20回',6],['ヒップリフト','20回',3],['リバースクランチ','15回',3]],B:[['膝つき腕立て','12回',3],['ワンハンドKBロウ','左右12回',3],['ショルダープレス','20回',3],['バイシクルクランチ','左右15回',3],['プランク','60秒',3]],C:[['KBデッドリフト','20回',6],['ブルガリアンスクワット','左右10回',3],['KBスイング','20回',6],['バイシクルクランチ','左右15回',3],['プランク','60秒',3]],D:[['KBスイング','20回',6],['KBデッドリフト','20回',6],['膝つき腕立て','12回',3],['ゴブレットスクワット','15回',3],['リバースクランチ','15回',3]]};
 const shadow=['ジャブ中心（リズム・距離）','ワンツー','ジャブ→右ストレート','ジャブ→左ボディ','ワンツー→左ボディ','ワンツー→右フック','左フック→右ストレート','ステップイン→連打','左右ボディ（打ち分け）','コンビネーション（自由）','試合をイメージ（距離・攻防）','まとめ（自由）'];const bag=['ジャブ・ワンツー','ボディ中心（右・左）','コンビネーション（ジャブ→右→左）','フック・アッパー（角度をつける）','連打（ボディ→フック）','まとめ（自由・試合イメージ）'];const personal=[['前半シャドー','ジャブ・ワンツー（距離と打点）','ステップインジャブ→右スト→再ステップイン→右スト'],['バッグ','ジャブ→右ボディストレート','ステップインジャブ→右ボディ→再ステップイン→左アッパー→右フック'],['後半シャドー','フェイント→踏み込み→連打→離脱','試合想定（距離・攻防・二段階ステップイン）']];
@@ -27,10 +27,31 @@ function renderStats(){let logs=Object.values(db.logs);$('statDays').textContent
  field.value=JSON.stringify(db,null,2);
  panel.classList.remove('hidden');
  panel.scrollIntoView();
- field.focus();field.select();
+ field.scrollTop=0;
 }
 $('copyExportBtn').onclick=showLegacyJson;
-$('legacySelectJson').onclick=function(){var f=$('legacyJsonText');f.focus();f.select();f.setSelectionRange(0,f.value.length);};
+function legacyCopyAll(){
+ var f=$('legacyJsonText'),button=$('legacyCopyJson'),original=button.textContent;
+ var previousReadonly=f.readOnly;
+ // iOS 12 Safari: focus + selection + synchronous execCommand(copy) in tap handler.
+ f.readOnly=false;
+ f.focus();
+ f.select();
+ try{f.setSelectionRange(0,f.value.length)}catch(e){}
+ var success=false;
+ try{success=document.execCommand('copy')}catch(e){}
+ f.readOnly=previousReadonly;
+ if(success){
+  button.textContent='✅ コピーできたで！';
+  alert('JSON全文をコピーしたで！ メモに貼り付けて確認してな。');
+ }else{
+  button.textContent='コピーできませんでした';
+  alert('このiPadでは自動コピーができませんでした。JSON欄を長押しして「すべてを選択」→「コピー」を試してな。');
+ }
+ setTimeout(function(){button.textContent=original},3500);
+}
+$('legacyCopyJson').onclick=legacyCopyAll;
+$('legacySelectJson').onclick=function(){var f=$('legacyJsonText');f.focus();f.select();try{f.setSelectionRange(0,f.value.length)}catch(e){}};
 $('legacyCloseJson').onclick=function(){$('legacyJsonPanel').classList.add('hidden')};
 $('exportBtn').onclick=function(){
  // iOS 12のホーム画面アプリはblobダウンロードが動作しない場合がある。
